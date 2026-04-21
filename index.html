@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cabinet Dentaire Eric Tran & Associés — v3 StoryBrand</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
@@ -1972,7 +1974,7 @@
             <div class="email-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
             <div class="email-info">
               <div class="email-label">Pour toute question générale</div>
-              <div class="email-addr">contact@cabinetdentairele110.fr</div>
+              <div class="email-addr" data-u="contact" data-d="cabinetdentairele110.fr"></div>
             </div>
           </div>
         </div>
@@ -1982,14 +1984,14 @@
             <div class="email-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
             <div class="email-info">
               <div class="email-label">Fiona — Coordinatrice clinique</div>
-              <div class="email-addr">fiona@cabinetdentairele110.fr</div>
+              <div class="email-addr" data-u="fiona" data-d="cabinetdentairele110.fr"></div>
             </div>
           </div>
           <div class="email-card">
             <div class="email-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
             <div class="email-info">
               <div class="email-label">Sabrina — Office Manager</div>
-              <div class="email-addr">sabrina@cabinetdentairele110.fr</div>
+              <div class="email-addr" data-u="sabrina" data-d="cabinetdentairele110.fr"></div>
             </div>
           </div>
         </div>
@@ -2023,6 +2025,11 @@
 
   showSlide(0);
   setInterval(nextSlide, DURATION);
+
+  // Reconstruit les emails à la volée (obfuscation anti-scraping)
+  document.querySelectorAll('.email-addr[data-u]').forEach(function(el) {
+    el.textContent = el.dataset.u + String.fromCharCode(64) + el.dataset.d;
+  });
 
   setInterval(function() {
     document.title = 'Cabinet Dentaire Eric Tran · v2 StoryBrand · ' + new Date().toLocaleTimeString('fr-FR');
