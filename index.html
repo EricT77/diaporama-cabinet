@@ -1057,6 +1057,53 @@
     display: inline-block;
     margin-right: 10px;
   }
+  .stakes-guide {
+    position: absolute;
+    bottom: 5vh; right: 5vw;
+    display: flex; align-items: center; gap: 18px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 14px 18px;
+    border-radius: 16px;
+    border: 1px solid rgba(232, 168, 124, 0.35);
+    backdrop-filter: blur(10px);
+    z-index: 3;
+  }
+  .stakes-guide img {
+    width: 90px; height: 90px;
+    display: block;
+    background: var(--white);
+    padding: 6px;
+    border-radius: 10px;
+  }
+  .stakes-guide .text {
+    max-width: 180px;
+    text-align: left;
+  }
+  .stakes-guide .text .eyebrow {
+    display: block !important;
+    color: var(--warm);
+    font-size: 0.65rem !important;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 5px !important;
+    padding: 0 !important;
+    border: none !important;
+    background: none !important;
+  }
+  .stakes-guide .text .title {
+    color: var(--white);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+  .stakes-guide .text .sub {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.75rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+  }
 
   /* ============ 13. SUCCESS ============ */
   .slide-success {
@@ -1324,7 +1371,7 @@
   <section class="slide slide-hero active">
     <div class="hero-inner">
       <div class="hero-logo-small"><img src="logo.png" alt="Cabinet Dentaire Eric Tran"></div>
-      <h1 class="hero-title">La confiance <strong>d'un sourire en pleine santé.</strong></h1>
+      <h1 class="hero-title">Retrouvez la confiance <strong>d'un sourire en pleine santé.</strong></h1>
       <p class="hero-subtitle">— Votre cabinet dentaire à Pontault-Combault —</p>
       <div class="hero-cta">
         <span class="arrow">→</span>
@@ -1448,18 +1495,18 @@
     <div class="guide-grid">
       <div class="guide-card">
         <div class="icon"><svg width="36" height="36"><use href="#icon-shield"/></svg></div>
-        <h3>Des soins qui durent</h3>
-        <p>15 années de formation continue et des techniques éprouvées qui tiennent dans le temps. On ne soigne pas pour quelques mois, on soigne pour des décennies.</p>
+        <h3>Des soins pensés pour durer</h3>
+        <p>15 années de formation continue. Des techniques qui tiennent dans le temps — pas pour quelques mois, pour des décennies.</p>
       </div>
       <div class="guide-card">
         <div class="icon"><svg width="36" height="36"><use href="#icon-heart"/></svg></div>
         <h3>On prend le temps</h3>
-        <p>Écoute, explications, accompagnement. Vous n'êtes jamais seul face à une décision. On vous explique chaque étape, chaque option, chaque coût.</p>
+        <p>Écoute. Explications. Accompagnement. Vous n'êtes jamais seul face à une décision.</p>
       </div>
       <div class="guide-card">
         <div class="icon"><svg width="36" height="36"><use href="#icon-tech"/></svg></div>
         <h3>Moins d'attente, plus de confort</h3>
-        <p>Imagerie 3D, empreintes numériques sans pâte, laser sans scalpel. La technologie au service de votre confort et de votre sérénité.</p>
+        <p>Imagerie 3D. Empreintes sans pâte. Laser sans scalpel. La technologie au service de votre sérénité.</p>
       </div>
     </div>
     <div class="guide-stats">
@@ -1542,7 +1589,7 @@
       <div class="eyebrow">Portrait · Dr Eric Tran</div>
       <h2>L'implantologie est d'abord <strong>une histoire humaine.</strong></h2>
       <div class="empathy-quote">
-        « Je sais que poser un implant intimide. Mon rôle, c'est que vous compreniez chaque étape, que vous posiez toutes vos questions, et que vous repartiez en confiance. Pas de jargon, pas de pression. »
+        « Poser un implant intimide. Mon rôle : vous expliquer, répondre à vos questions, faire en sorte que vous repartiez en confiance. Pas de jargon, pas de pression. »
         <span class="signature">— Dr Eric Tran</span>
       </div>
       <div class="credentials">
@@ -1567,7 +1614,7 @@
       <div class="eyebrow">Portrait · Dr Marion Stuhrmann</div>
       <h2>On vous explique. <strong>On ne décide pas à votre place.</strong></h2>
       <div class="empathy-quote">
-        « Prendre soin de vos dents, c'est aussi prendre soin de vos gencives et de votre sourire dans son ensemble. Vous méritez des soins précis, durables, et une personne en face de vous qui prend le temps d'expliquer. »
+        « Vos dents, vos gencives, votre sourire : un tout. Vous méritez des soins précis, durables, et quelqu'un qui prend le temps de vous expliquer. »
         <span class="signature">— Dr Marion Stuhrmann</span>
       </div>
       <div class="credentials">
@@ -1592,7 +1639,7 @@
       <div class="eyebrow">Portrait · Dr Mihaela Zaporojan</div>
       <h2>Les gencives, <strong>fondation d'un sourire qui dure.</strong></h2>
       <div class="empathy-quote">
-        « Beaucoup de patients découvrent qu'ils ont un problème de gencives sans le savoir. Mon rôle, c'est de vous expliquer simplement ce qui se passe, et de vous accompagner étape par étape pour stabiliser la situation, pour la vie. »
+        « Beaucoup de patients ignorent qu'ils ont un problème de gencives. Je vous explique simplement, et on avance ensemble pour stabiliser la situation — pour la vie. »
         <span class="signature">— Dr Mihaela Zaporojan</span>
       </div>
       <div class="credentials">
@@ -1617,7 +1664,7 @@
       <div class="eyebrow">Portrait · Dr Nathalie Berder</div>
       <h2>L'écoute et l'expérience <strong>d'une praticienne aguerrie.</strong></h2>
       <div class="empathy-quote">
-        « Vingt ans de métier, c'est d'abord vingt ans à écouter. Je prends le temps de poser le bon diagnostic et de vous proposer le soin le plus juste — pas le plus spectaculaire, le plus juste pour vous. »
+        « Vingt ans de métier, c'est vingt ans à écouter. Le bon diagnostic. Le soin le plus juste — pas le plus spectaculaire, le plus juste pour vous. »
         <span class="signature">— Dr Nathalie Berder</span>
       </div>
       <div class="credentials">
@@ -1642,7 +1689,7 @@
       <div class="eyebrow">Portrait · Dr Annam Abdul</div>
       <h2>Un sourire <strong>fidèle à qui vous êtes.</strong></h2>
       <div class="empathy-quote">
-        « Chaque sourire est unique. Je ne cherche pas à reproduire un modèle : je cherche à révéler le vôtre, en alliant santé des gencives et esthétique naturelle. Le résultat doit vous ressembler, pas ressembler à quelqu'un d'autre. »
+        « Chaque sourire est unique. Je ne reproduis pas un modèle — je révèle le vôtre. Santé des gencives et esthétique naturelle, pour un résultat qui vous ressemble. »
         <span class="signature">— Dr Annam Abdul</span>
       </div>
       <div class="credentials">
@@ -1845,6 +1892,14 @@
       <p class="stakes-body">Une carie non traitée devient une dévitalisation. Une gencive négligée devient un déchaussement. Une dent arrachée devient un implant plus complexe. La prévention, c'est toujours le traitement le moins cher, le moins invasif — et le plus serein.</p>
       <div class="stakes-key">
         <strong>80 %</strong> des problèmes dentaires détectés lors d'un contrôle annuel
+      </div>
+    </div>
+    <div class="stakes-guide">
+      <img src="qr-conseils.png" alt="QR code guide conseils">
+      <div class="text">
+        <span class="eyebrow">Guide gratuit</span>
+        <div class="title">5 conseils pour un sourire en pleine santé</div>
+        <div class="sub">— Scannez pour le lire —</div>
       </div>
     </div>
   </section>
