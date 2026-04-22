@@ -1396,6 +1396,89 @@
     letter-spacing: -0.005em;
   }
 
+  /* ============ SLIDE SAISONNIÈRE (auto-rotation selon la date) ============ */
+  .slide-seasonal {
+    background: linear-gradient(180deg, var(--bg-soft) 0%, var(--bg-tint) 100%);
+    justify-content: center;
+  }
+  .seasonal-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 4vw;
+    width: 100%;
+  }
+  .seasonal-inner .eyebrow {
+    display: inline-block;
+    color: var(--cyan);
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 8px 22px;
+    background: rgba(61, 181, 224, 0.1);
+    border-radius: 999px;
+    border: 1px solid rgba(61, 181, 224, 0.25);
+    margin-bottom: 20px;
+  }
+  .seasonal-inner h2 {
+    font-size: 3.2rem;
+    font-weight: 300;
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .seasonal-inner h2 strong {
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--navy), var(--cyan));
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .seasonal-tips {
+    max-width: 850px;
+    margin: 25px auto 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    text-align: left;
+  }
+  .seasonal-tip {
+    background: var(--white);
+    padding: 18px 24px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(10, 46, 92, 0.07);
+    border-left: 4px solid var(--cyan);
+    color: var(--ink);
+    font-size: 1.05rem;
+    line-height: 1.5;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    animation: card-rise 0.8s ease-out both;
+  }
+  .seasonal-tip:nth-child(1) { animation-delay: 0.15s; }
+  .seasonal-tip:nth-child(2) { animation-delay: 0.3s; }
+  .seasonal-tip:nth-child(3) { animation-delay: 0.45s; }
+  .seasonal-tip::before {
+    content: '';
+    flex-shrink: 0;
+    width: 9px; height: 9px;
+    margin-top: 8px;
+    background: var(--cyan);
+    border-radius: 50%;
+  }
+  .seasonal-tip strong {
+    color: var(--navy);
+    font-weight: 700;
+  }
+  .seasonal-footer {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
 </style>
 </head>
 <body>
@@ -1960,6 +2043,134 @@
     </div>
   </section>
 
+  <!-- ============ SLIDES SAISONNIÈRES (une seule activée selon la date) ============ -->
+
+  <!-- HIVER (janvier-février) -->
+  <section class="slide slide-seasonal" data-season="hiver" data-duration="18000">
+    <div class="slide-header">
+      <div class="brand">
+        <div class="logo-mark"><img src="logo.png" alt=""></div>
+        <div class="brand-text">Cabinet Dentaire Eric Tran &amp; Associés<span>Pontault-Combault</span></div>
+      </div>
+      <div class="date-chip"><span class="arrow">→</span> 01 60 29 70 00</div>
+    </div>
+    <div class="seasonal-inner">
+      <span class="eyebrow">Conseil de saison · Hiver</span>
+      <h2>Protégez <strong>vos gencives.</strong></h2>
+      <div class="seasonal-tips">
+        <div class="seasonal-tip">L'air sec et les boissons chaudes sucrées agressent les gencives en hiver.</div>
+        <div class="seasonal-tip">Hydratez-vous à l'eau plate et brossez-vous après chaque chocolat chaud.</div>
+        <div class="seasonal-tip">Douleur au froid&nbsp;? C'est souvent une <strong>rétraction de la gencive</strong>. Venez nous voir.</div>
+      </div>
+      <p class="seasonal-footer">— Le cabinet vous accompagne toute l'année —</p>
+    </div>
+  </section>
+
+  <!-- PRINTEMPS (mars-avril-mai) -->
+  <section class="slide slide-seasonal" data-season="printemps" data-duration="18000">
+    <div class="slide-header">
+      <div class="brand">
+        <div class="logo-mark"><img src="logo.png" alt=""></div>
+        <div class="brand-text">Cabinet Dentaire Eric Tran &amp; Associés<span>Pontault-Combault</span></div>
+      </div>
+      <div class="date-chip"><span class="arrow">→</span> 01 60 29 70 00</div>
+    </div>
+    <div class="seasonal-inner">
+      <span class="eyebrow">Conseil de saison · Printemps</span>
+      <h2>Votre sourire <strong>pour la saison des photos.</strong></h2>
+      <div class="seasonal-tips">
+        <div class="seasonal-tip">Mariages, communions, Pâques… les occasions de sourire reviennent.</div>
+        <div class="seasonal-tip">Le détartrage printanier redonne éclat et fraîcheur en 45 minutes.</div>
+        <div class="seasonal-tip">Vous pensez au blanchiment pour l'été&nbsp;? <strong>Prenez rendez-vous dès mars</strong> pour un résultat optimal.</div>
+      </div>
+      <p class="seasonal-footer">— Le cabinet vous accompagne toute l'année —</p>
+    </div>
+  </section>
+
+  <!-- ÉTÉ (juin-juillet-août) -->
+  <section class="slide slide-seasonal" data-season="ete" data-duration="18000">
+    <div class="slide-header">
+      <div class="brand">
+        <div class="logo-mark"><img src="logo.png" alt=""></div>
+        <div class="brand-text">Cabinet Dentaire Eric Tran &amp; Associés<span>Pontault-Combault</span></div>
+      </div>
+      <div class="date-chip"><span class="arrow">→</span> 01 60 29 70 00</div>
+    </div>
+    <div class="seasonal-inner">
+      <span class="eyebrow">Conseil de saison · Été</span>
+      <h2>En vacances&nbsp;? <strong>Votre trousse dentaire.</strong></h2>
+      <div class="seasonal-tips">
+        <div class="seasonal-tip">Emportez&nbsp;: brosse souple, fil dentaire, baume à lèvres SPF 30, anti-douleur.</div>
+        <div class="seasonal-tip">Dent cassée en vacances&nbsp;? <strong>Appelez-nous avant d'aller chez un dentiste inconnu.</strong></div>
+        <div class="seasonal-tip">Sodas et glaces attaquent l'émail — rincez à l'eau après chaque pause douceur.</div>
+      </div>
+      <p class="seasonal-footer">— Le cabinet vous accompagne toute l'année —</p>
+    </div>
+  </section>
+
+  <!-- RENTRÉE (septembre) -->
+  <section class="slide slide-seasonal" data-season="rentree" data-duration="18000">
+    <div class="slide-header">
+      <div class="brand">
+        <div class="logo-mark"><img src="logo.png" alt=""></div>
+        <div class="brand-text">Cabinet Dentaire Eric Tran &amp; Associés<span>Pontault-Combault</span></div>
+      </div>
+      <div class="date-chip"><span class="arrow">→</span> 01 60 29 70 00</div>
+    </div>
+    <div class="seasonal-inner">
+      <span class="eyebrow">Conseil de saison · Rentrée</span>
+      <h2>C'est la rentrée&nbsp;: <strong>le moment parfait pour un bilan.</strong></h2>
+      <div class="seasonal-tips">
+        <div class="seasonal-tip">Enfants&nbsp;: premier rendez-vous orthodontique conseillé <strong>avant 8 ans</strong>.</div>
+        <div class="seasonal-tip">Adultes&nbsp;: rattrapez votre contrôle annuel reporté par l'été.</div>
+        <div class="seasonal-tip">Un simple quart d'heure peut détecter <strong>80 % des problèmes</strong> à leur début.</div>
+      </div>
+      <p class="seasonal-footer">— Le cabinet vous accompagne toute l'année —</p>
+    </div>
+  </section>
+
+  <!-- AUTOMNE (octobre-novembre) -->
+  <section class="slide slide-seasonal" data-season="automne" data-duration="18000">
+    <div class="slide-header">
+      <div class="brand">
+        <div class="logo-mark"><img src="logo.png" alt=""></div>
+        <div class="brand-text">Cabinet Dentaire Eric Tran &amp; Associés<span>Pontault-Combault</span></div>
+      </div>
+      <div class="date-chip"><span class="arrow">→</span> 01 60 29 70 00</div>
+    </div>
+    <div class="seasonal-inner">
+      <span class="eyebrow">Conseil de saison · Automne</span>
+      <h2>Santé de la bouche, <strong>santé du corps.</strong></h2>
+      <div class="seasonal-tips">
+        <div class="seasonal-tip">Des gencives en bonne santé réduisent les risques cardiaques, diabétiques et respiratoires.</div>
+        <div class="seasonal-tip">Gingivite d'automne&nbsp;? Un saignement au brossage se soigne vite si on agit tôt.</div>
+        <div class="seasonal-tip">Prendre soin de votre sourire, c'est prendre soin de vous.</div>
+      </div>
+      <p class="seasonal-footer">— Le cabinet vous accompagne toute l'année —</p>
+    </div>
+  </section>
+
+  <!-- FÊTES (décembre) -->
+  <section class="slide slide-seasonal" data-season="fetes" data-duration="18000">
+    <div class="slide-header">
+      <div class="brand">
+        <div class="logo-mark"><img src="logo.png" alt=""></div>
+        <div class="brand-text">Cabinet Dentaire Eric Tran &amp; Associés<span>Pontault-Combault</span></div>
+      </div>
+      <div class="date-chip"><span class="arrow">→</span> 01 60 29 70 00</div>
+    </div>
+    <div class="seasonal-inner">
+      <span class="eyebrow">Conseil de saison · Fêtes</span>
+      <h2>Entre gourmandises <strong>et bonnes résolutions.</strong></h2>
+      <div class="seasonal-tips">
+        <div class="seasonal-tip">Champagne, chocolats, clémentines… l'émail encaisse.</div>
+        <div class="seasonal-tip">Rincez-vous à l'eau plate après chaque grignotage sucré.</div>
+        <div class="seasonal-tip"><strong>Attendez 30 minutes avant de vous brosser</strong> après le sucré — le sucre fragilise l'émail temporairement.</div>
+      </div>
+      <p class="seasonal-footer">— Le cabinet vous accompagne toute l'année —</p>
+    </div>
+  </section>
+
   <!-- ============ 13. SUCCESS — La vie après ============ -->
   <section class="slide slide-success" data-duration="20000">
     <div class="slide-header">
@@ -2125,6 +2336,23 @@
 
 <script>
 (function() {
+  // Sélection automatique de la slide saisonnière selon la date du jour.
+  // Ce bloc DOIT tourner avant la récupération des .slide, pour que les slides
+  // saisonnières non-actives soient retirées du DOM avant comptage.
+  (function pickSeason() {
+    var m = new Date().getMonth() + 1; // 1..12
+    var current;
+    if (m === 12) current = 'fetes';
+    else if (m === 1 || m === 2) current = 'hiver';
+    else if (m >= 3 && m <= 5) current = 'printemps';
+    else if (m >= 6 && m <= 8) current = 'ete';
+    else if (m === 9) current = 'rentree';
+    else current = 'automne'; // octobre, novembre
+    document.querySelectorAll('.slide-seasonal[data-season]').forEach(function(s) {
+      if (s.dataset.season !== current) s.remove();
+    });
+  })();
+
   var DURATION = 16000;
   var slides = document.querySelectorAll('.slide');
   var progress = document.getElementById('progress');
