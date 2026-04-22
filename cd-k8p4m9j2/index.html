@@ -1437,7 +1437,7 @@
   </section>
 
   <!-- ============ 2. PROBLEM ============ -->
-  <section class="slide slide-problem">
+  <section class="slide slide-problem" data-duration="18000">
     <div class="slide-header">
       <div class="brand">
         <div class="logo-mark"><img src="logo.png" alt=""></div>
@@ -1475,7 +1475,7 @@
   </section>
 
   <!-- ============ TÉMOIGNAGES PATIENTS ============ -->
-  <section class="slide slide-testimonials">
+  <section class="slide slide-testimonials" data-duration="18000">
     <div class="slide-header">
       <div class="brand">
         <div class="logo-mark"><img src="logo.png" alt=""></div>
@@ -1961,7 +1961,7 @@
   </section>
 
   <!-- ============ 13. SUCCESS — La vie après ============ -->
-  <section class="slide slide-success">
+  <section class="slide slide-success" data-duration="20000">
     <div class="slide-header">
       <div class="brand">
         <div class="logo-mark"><img src="logo.png" alt=""></div>
@@ -1994,7 +1994,7 @@
   </section>
 
   <!-- ============ SUCCESS 2 — Implants 24h (extraction + all-on-6) ============ -->
-  <section class="slide slide-success">
+  <section class="slide slide-success" data-duration="20000">
     <div class="slide-header">
       <div class="brand">
         <div class="logo-mark"><img src="logo.png" alt=""></div>
@@ -2027,7 +2027,7 @@
   </section>
 
   <!-- ============ SUCCESS 3 — Implant unitaire (zoom technique) ============ -->
-  <section class="slide slide-success">
+  <section class="slide slide-success" data-duration="20000">
     <div class="slide-header">
       <div class="brand">
         <div class="logo-mark"><img src="logo.png" alt=""></div>
@@ -2060,7 +2060,7 @@
   </section>
 
   <!-- ============ 14. CTA + CONTACT ============ -->
-  <section class="slide slide-cta">
+  <section class="slide slide-cta" data-duration="20000">
     <div class="cta-left">
       <div class="cta-inner">
         <div class="eyebrow">Nous restons à votre écoute</div>
@@ -2128,23 +2128,28 @@
   var DURATION = 16000;
   var slides = document.querySelectorAll('.slide');
   var progress = document.getElementById('progress');
-  var current = 0, progressStart = 0, rafId = null;
+  var current = 0, progressStart = 0, currentDur = DURATION, rafId = null, nextTimer = null;
 
+  function getDuration(slide) {
+    return parseInt(slide.dataset.duration) || DURATION;
+  }
   function showSlide(i) {
     slides.forEach(function(s, idx) { s.classList.toggle('active', idx === i); });
+    currentDur = getDuration(slides[i]);
     progressStart = performance.now();
     cancelAnimationFrame(rafId); tickProgress();
+    clearTimeout(nextTimer);
+    nextTimer = setTimeout(nextSlide, currentDur);
   }
   function tickProgress() {
     var elapsed = performance.now() - progressStart;
-    var pct = Math.min(100, (elapsed / DURATION) * 100);
+    var pct = Math.min(100, (elapsed / currentDur) * 100);
     progress.style.width = pct + '%';
     if (pct < 100) rafId = requestAnimationFrame(tickProgress);
   }
   function nextSlide() { current = (current + 1) % slides.length; showSlide(current); }
 
   showSlide(0);
-  setInterval(nextSlide, DURATION);
 
   // Reconstruit les emails à la volée (obfuscation anti-scraping)
   document.querySelectorAll('.email-addr[data-u]').forEach(function(el) {
