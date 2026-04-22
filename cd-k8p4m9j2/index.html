@@ -1135,34 +1135,88 @@
     -webkit-background-clip: text; background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  .success-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    gap: 22px; max-width: 1500px; margin: 0 auto; width: 100%;
-  }
-  .success-card {
-    background: var(--white);
-    padding: 35px 24px;
-    border-radius: 22px;
-    text-align: center;
-    box-shadow: 0 12px 40px rgba(10, 46, 92, 0.1);
-    animation: card-rise 0.9s ease-out both;
-    display: flex; flex-direction: column; align-items: center; gap: 16px;
-  }
-  .success-card:nth-child(1) { animation-delay: 0.1s; }
-  .success-card:nth-child(2) { animation-delay: 0.25s; }
-  .success-card:nth-child(3) { animation-delay: 0.4s; }
-  .success-card:nth-child(4) { animation-delay: 0.55s; }
-  .success-card .icon-wrap {
-    width: 70px; height: 70px;
-    background: linear-gradient(135deg, var(--cyan), var(--navy));
-    border-radius: 50%;
+  .before-after {
     display: flex; align-items: center; justify-content: center;
+    gap: 28px; max-width: 1200px;
+    margin: 0 auto 3vh; width: 100%;
+  }
+  .ba-item {
+    position: relative; flex: 1;
+    animation: card-rise 1s ease-out both;
+  }
+  .ba-item:nth-child(1) { animation-delay: 0.15s; }
+  .ba-item:nth-child(3) { animation-delay: 0.45s; }
+  .ba-item img {
+    width: 100%; height: auto;
+    display: block;
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(10, 46, 92, 0.18);
+    border: 4px solid var(--white);
+  }
+  .ba-label {
+    position: absolute;
+    top: 14px; left: 14px;
+    padding: 7px 18px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+    z-index: 2;
+  }
+  .ba-label.before {
+    background: rgba(26, 35, 50, 0.75);
     color: var(--white);
   }
-  .success-card p {
+  .ba-label.after {
+    background: rgba(61, 181, 224, 0.95);
+    color: var(--white);
+  }
+  .ba-arrow {
+    font-size: 3rem;
+    font-weight: 200;
+    color: var(--cyan);
+    flex-shrink: 0;
+    animation: arrow-pulse 2.5s ease-in-out infinite;
+  }
+  @keyframes arrow-pulse {
+    0%, 100% { transform: translateX(0); opacity: 0.6; }
+    50%      { transform: translateX(10px); opacity: 1; }
+  }
+  .ba-caption {
+    text-align: center;
+    margin-bottom: 3vh;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+  }
+  .success-chips {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 12px; max-width: 1400px; margin: 0 auto;
+  }
+  .success-chip {
+    background: var(--white);
+    padding: 13px 22px;
+    border-radius: 999px;
+    box-shadow: 0 6px 20px rgba(10, 46, 92, 0.08);
     color: var(--navy);
-    font-size: 1.1rem; font-weight: 600;
-    line-height: 1.4;
+    font-weight: 600;
+    font-size: 0.98rem;
+    display: flex; align-items: center; gap: 10px;
+    animation: card-rise 0.8s ease-out both;
+  }
+  .success-chip:nth-child(1) { animation-delay: 0.6s; }
+  .success-chip:nth-child(2) { animation-delay: 0.7s; }
+  .success-chip:nth-child(3) { animation-delay: 0.8s; }
+  .success-chip:nth-child(4) { animation-delay: 0.9s; }
+  .success-chip::before {
+    content: '✓';
+    color: var(--cyan);
+    font-weight: 700;
+    font-size: 1.1rem;
   }
 
   /* ============ 14. CTA + CONTACT ============ */
@@ -1919,23 +1973,23 @@
       <span class="eyebrow">Ce que vous retrouverez</span>
       <h2>Un sourire libéré, <strong>une confiance retrouvée.</strong></h2>
     </div>
-    <div class="success-grid">
-      <div class="success-card">
-        <div class="icon-wrap"><svg width="32" height="32"><use href="#icon-camera"/></svg></div>
-        <p>Sourire sur les photos,<br>sans retouche.</p>
+    <div class="before-after">
+      <div class="ba-item">
+        <span class="ba-label before">Avant</span>
+        <img src="avant-blanchiment.jpg" alt="Sourire avant blanchiment">
       </div>
-      <div class="success-card">
-        <div class="icon-wrap"><svg width="32" height="32"><use href="#icon-apple"/></svg></div>
-        <p>Manger ce que vous aimez,<br>sans appréhension.</p>
+      <div class="ba-arrow">→</div>
+      <div class="ba-item">
+        <span class="ba-label after">Après</span>
+        <img src="apres-blanchiment.jpg" alt="Sourire après blanchiment">
       </div>
-      <div class="success-card">
-        <div class="icon-wrap"><svg width="32" height="32"><use href="#icon-star"/></svg></div>
-        <p>Oser les rencontres,<br>les prises de parole.</p>
-      </div>
-      <div class="success-card">
-        <div class="icon-wrap"><svg width="32" height="32"><use href="#icon-moon"/></svg></div>
-        <p>Dormir tranquille,<br>sans douleur.</p>
-      </div>
+    </div>
+    <p class="ba-caption">— Blanchiment dentaire réalisé au cabinet —</p>
+    <div class="success-chips">
+      <span class="success-chip">Sourire sur les photos, sans retouche</span>
+      <span class="success-chip">Manger ce que vous aimez</span>
+      <span class="success-chip">Oser les rencontres</span>
+      <span class="success-chip">Dormir tranquille</span>
     </div>
   </section>
 
