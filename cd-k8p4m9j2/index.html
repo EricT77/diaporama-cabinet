@@ -644,6 +644,17 @@
     max-width: 400px;
   }
 
+  /* ============ ASSISTANTES DENTAIRES ============ */
+  .support-grid.assistantes { grid-template-columns: repeat(4, 1fr); gap: 30px; max-width: 1500px; }
+  .support-card.assistante { padding: 38px 24px; gap: 16px; }
+  .support-card.assistante:nth-child(3) { animation-delay: 0.6s; }
+  .support-card.assistante:nth-child(4) { animation-delay: 0.8s; }
+  .support-card.assistante .support-avatar { width: 160px; height: 160px; }
+  .support-avatar.beritan { background-image: url('beritan-avatar.jpg'); }
+  .support-avatar.janine { background-image: url('janine-avatar.jpg'); }
+  .support-avatar.fanny { background-image: url('fanny-avatar.jpg'); }
+  .support-avatar.johanna { background-image: url('johanna-avatar.jpg'); }
+
   /* ============ 7. HUMANITAIRE ============ */
   .slide-humanitarian {
     padding: 0; flex-direction: row !important; background: var(--white);
@@ -1868,6 +1879,44 @@
         <h3>Fiona</h3>
         <p class="role-sub">Suivi de vos soins</p>
         <p>Entre les séances, Fiona assure le relais : elle répond à vos questions, anticipe les étapes suivantes, et veille à la continuité de votre traitement. Vous n'êtes jamais seul face à votre parcours.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ASSISTANTES DENTAIRES ============ -->
+  <section class="slide slide-support slide-assistantes">
+    <div class="slide-header">
+      <div class="brand">
+        <div class="logo-mark"><img src="logo.png" alt=""></div>
+        <div class="brand-text">Cabinet Dentaire Eric Tran &amp; Associés<span>Pontault-Combault</span></div>
+      </div>
+      <div class="date-chip"><span class="arrow">→</span> 01 60 29 70 00</div>
+    </div>
+    <div class="support-head">
+      <div class="eyebrow">L'équipe de soins</div>
+      <h2>Vos <strong>assistantes dentaires</strong></h2>
+      <p class="sub">— à vos côtés à chaque étape du soin —</p>
+    </div>
+    <div class="support-grid assistantes">
+      <div class="support-card assistante">
+        <div class="support-avatar beritan"></div>
+        <div class="role-label">Assistante dentaire</div>
+        <h3>Beritan</h3>
+      </div>
+      <div class="support-card assistante">
+        <div class="support-avatar janine"></div>
+        <div class="role-label">Assistante dentaire</div>
+        <h3>Janine</h3>
+      </div>
+      <div class="support-card assistante">
+        <div class="support-avatar fanny"></div>
+        <div class="role-label">Assistante dentaire</div>
+        <h3>Fanny</h3>
+      </div>
+      <div class="support-card assistante">
+        <div class="support-avatar johanna"></div>
+        <div class="role-label">Assistante dentaire</div>
+        <h3>Johanna</h3>
       </div>
     </div>
   </section>
